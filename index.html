@@ -1,0 +1,24 @@
+---
+layout: landing
+---
+
+{% include about.html %}
+{% include portfolio.html %}
+{% assign featuredCases = site.cases | where: "category", "featured" | sort: 'order' %}
+
+<div class="case-studies">
+  {% for case in featuredCases %}
+    {% include case-preview.html %}
+  {% endfor %}
+
+  <!-- testimonials link - always separate and last -->
+  <a href="/testimonials">
+    <div class="case-study -testimonials">
+      
+      <div class="screen">
+        <span class="title">Testimonials</span>
+        <span class="properties">What People Are Saying</span>
+      </div>
+    </div>
+  </a>
+</div>

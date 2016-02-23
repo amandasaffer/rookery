@@ -1,0 +1,36 @@
+// Requirements
+// ============
+
+@import "susy";
+
+// global susy settings
+$susy: (
+	container: 1120px,
+  columns: 18,
+  gutters: 25px/45px,
+  column-width: 45px,
+  gutter-position: inside
+);
+
+// can do another map and then @include layout($map);
+// $med-map: (
+//   container: 960px,
+//   columns: 18,
+//   // gutters: 25px/45px,
+//   // column-width: 45px,
+//   gutter-position: inside
+// );
+
+
+// $lg-map: (
+//   container: 1120px,
+//   columns: 18,
+//   gutters: 25px/45px,
+//   column-width: 45px,
+//   gutter-position: inside
+// );
+
+
+.wrapper {
+	@include container;
+}
