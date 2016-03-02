@@ -1,13 +1,13 @@
 # The Rookery
-The Rookery's website and blog built with Jekyll, Susy, and SCSS.
-
+The Rookery's website and blog built with Jekyll, Susy, and SCSS.  
+  
 
 
 ### Installing Jekyll
 
-First, make sure you have [RubyGems][ruby-gems] installed. Then run `gem install jekyll` in your Terminal.
-
-
+First, make sure you have [RubyGems][ruby-gems] installed. Then run `gem install jekyll` in your Terminal.  
+  
+  
 
 ### Running a Server
 
