@@ -1,10 +1,18 @@
-<a href="{{ case.permalink }}">
-  <div class="case-study">
-    <div class="case -{{ case.css }}"></div>
-    
-    <div class="screen">
-      <span class="title">{{ case.title }}</span>
-      <span class="properties">{{ case.services }}</span>
-    </div>
+<div class="case-study slide-{{case.order}}">
+  <div class="case -{{ case.css }}"></div> 
+ 
+  <div class="screen">
+		<div class="wrapper">
+			<div class="case-info">
+				<h3 class="headline">{{ case.headline }}</h3>
+	  		<span class="title">{{ case.title }}</span>
+	  		<span class="divider">|</span>
+	  		<span class="properties">{{ case.services }}</span>
+			</div>
+			<div class="read-more">
+				<a href="{{ case.permalink }}" class="light button">Read More</a>
+			</div>
+
+		</div>
   </div>
-</a>
+</div>

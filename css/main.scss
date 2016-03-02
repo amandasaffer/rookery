@@ -2,26 +2,27 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,600,900,400italic,600italic');
-@font-face {
-  font-family: emillia;
-  src: url('/fonts/Emillia.otf');
-  src: url('/fonts/Emillia.ttf');
-}
 
-
-$base-font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$title-sans: "Montserrat", Helvetica, Arial, sans-serif;
+$chaparral: "Chaparral Pro", sans-serif;
+$base-font-family: "Chaparral Pro", sans-serif;
+$base-font-size:   17px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$emillia: emillia, sans-serif;
+$fade:             #E8EEF0;
+$nebula:           #C9D7DC;
+$airforce:         #5F91A2;
+$mirage:           #0C2029;
+$gunmetal:         #030D12;
+$pelo:             #4CA2C0;
 
 $spacing-unit:     30px;
 
-$text-color:       #333;
-$background-color: #fff;
+$text-color:       $fade;
+// $background-color: $gunmetal;
+$background-color: darken(#163D50, 13%);
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
@@ -52,6 +53,34 @@ $darkred:					#8F2823;
 
 @mixin buffer-bottom($units) {
   margin-bottom: $units;
+}
+
+.centered-text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.icon {
+  display: inline-block;
+  margin: 0 auto;
+  width: 125px;
+  height: 125px;
+  fill: $airforce;
+  color: #fff;
+}
+
+.icon-identity {
+  -webkit-transform: rotate(45deg); 
+  -moz-transform: rotate(45deg); 
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
