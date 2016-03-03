@@ -109,21 +109,21 @@
   * Only for home page
   */
 #landing {
-	background-image: url('/img/raven3.jpg');
+	background-image: url('/img/woods1.jpg');
 	// background-image: url('/img/birds2.jpg');
 	background-size: cover;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
-	box-shadow: inset 0 0 0 1000px rgba(11,22,27,.9);
+	box-shadow: inset 0 0 0 1000px rgba(11,22,27,.85);
 	height: 85vh;
 	color: #fff;
 
 	h1.headline {
 		font-family: $chaparral;
 		font-size: 2rem;
-		line-height: 1.2;
+		line-height: 1.3;
 		text-shadow: 3px 3px 5px #222;
-		margin-bottom: 60px;
+		margin-bottom: 50px;
 	}
 
 	@media handheld, screen and (min-width: 768px) {
@@ -144,8 +144,8 @@
 
 	@media handheld, screen and (min-width: 1200px) {
 		h1.headline {
-			font-size: 5rem;
-			line-height: 1.3;
+			font-size: 4rem;
+			line-height: 1.2;
 		}
 	}
 }
@@ -154,7 +154,7 @@
 // Landing: Hero content
 #landing > .wrapper > .content {
 	text-align: center;
-	padding-top: 30vh;
+	padding-top: 29vh;
 
 	@media handheld, screen and (min-width: 992px) {
 		@include span(18);
@@ -162,7 +162,7 @@
 
 	@media handheld, screen and (min-width: 1200px) {
 		padding: 100px 0 50px;
-		margin-top: 23vh;
+		margin-top: 10vh;
 	}
 
 	a.sublink {
