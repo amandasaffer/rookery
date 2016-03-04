@@ -1,6 +1,6 @@
 /**
   * Site Menu
-  *
+  * The main site navigation is hidden in this hamburger menu
   */
 #site-menu {
 	position: absolute;
@@ -9,7 +9,6 @@
 	right: 20px;
 	height: 55px;
 	width: 55px;
-	// background: darken(#163D50, 13%);
 	z-index: 100;
 
 	span.bar {
@@ -20,7 +19,6 @@
 		background: white;
 		border-radius: 2rem;
 		transition: all 500ms ease-in-out;
-
 		&:first-child { margin-top: 22px; }
 	}
 
@@ -78,7 +76,6 @@
 
   display: none;
   align-items: center;
-  // justify-content: center;
 
 	> ul.nav {
 		list-style-type: none;
@@ -86,9 +83,7 @@
 		padding: .5rem 2.5rem .4rem .4rem;
 	}
 
-	> ul.nav > a { 
-		color: #fff;
-	}
+	> ul.nav > a { color: #fff; }
 
 	li {
 		padding: 8px 10px;
@@ -97,7 +92,6 @@
 
 	@media handheld, screen and (min-width: 768px) {
   	padding-left: 8%;
-
   	li { font-size: 3rem; }
   }
 
@@ -110,7 +104,6 @@
   */
 #landing {
 	background-image: url('/img/woods1.jpg');
-	// background-image: url('/img/birds2.jpg');
 	background-size: cover;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -121,24 +114,27 @@
 	h1.headline {
 		font-family: $chaparral;
 		font-size: 2rem;
-		line-height: 1.3;
+		line-height: 1.2;
 		text-shadow: 3px 3px 5px #222;
-		margin-bottom: 50px;
+		padding: 0 50px 50px;
 	}
 
 	@media handheld, screen and (min-width: 768px) {
-		background-attachment: fixed;
-		height: 100vh;
+		height: 70vh;
 		h1.headline {
 			font-size: 3rem;
-			line-height: 1.3;
+			line-height: 1.1;
+			padding: 0 40px 40px;
 		}
 	}
 
 	@media handheld, screen and (min-width: 992px) {
+		height: 100vh;
+		background-attachment: fixed; // desktop only
 		h1.headline {
-			font-size: 5rem;
-			line-height: 1.3;
+			font-size: 3.75rem;
+			line-height: 1.1;
+			padding: 0;
 		}
 	}
 
@@ -147,17 +143,22 @@
 			font-size: 4rem;
 			line-height: 1.2;
 		}
+
+		img.logo {
+			width: 350px; 
+			height: 100px; 
+			margin-bottom: 60px;
+		}
 	}
 }
 
-
-// Landing: Hero content
 #landing > .wrapper > .content {
 	text-align: center;
-	padding-top: 29vh;
+	padding-top: 22vh;
 
 	@media handheld, screen and (min-width: 992px) {
 		@include span(18);
+		padding-top: 29vh;
 	}
 
 	@media handheld, screen and (min-width: 1200px) {
@@ -176,8 +177,8 @@
 
 
 /**
-  * About
-  * _includes/about.html
+  * LANDING CONTENT SECTIONS
+  * Services, process, and details
   */
 div.about, div.details {
 	background-color: darken(#163D50, 13%);
@@ -186,8 +187,9 @@ div.about, div.details {
  	h2.subhead {
  		color: #E8EEF0;
  		font-family: $chaparral;
- 		font-size: 1.125rem;
+ 		font-size: 1.25rem;
  		line-height: 1.3;
+ 		margin-bottom: 0;
  	}
 
  	@media handheld, screen and (min-width: 768px) {
@@ -203,71 +205,6 @@ div.about, div.details {
 div.quote {
 	background-color: darken(#163D50, 13%);
 	padding-bottom: 115px;
-}
-
-// HIGH
-.section-title > ul.about {
-	list-style-type: none;
-	margin: 0;
-	padding: 60px 0 0;
-	border-radius: 2px;
-	position: relative;
-	text-align: left;
-	top: -25px;
-
-	li {
-		margin-bottom: 30px;
-		opacity: .75;
-		border-bottom: 2px solid $pelo;
-		padding-bottom: 20px;
-		font-size: .925rem;
-		letter-spacing: .015rem;
-		line-height: 1.2;
-		font-weight: 300;
-		font-family: $title-sans;
-
-		&:last-child { border: none; }
-	}
-
-	li span {
-		display: block;
-		text-transform: uppercase;
-		margin-top: 5px;
-		line-height: 1;
-		letter-spacing: .03rem;
-		font-family: $title-sans;
-		font-weight: 500;
-		font-size: .8rem;
-		opacity: 1;
-		color: $pelo;
-	}
-
-	@media handheld, screen and (min-width: 992px) {
-		padding: 35px 50px 20px 30px;
-	}
-}
-
-.section-full { 
-	@include span(18); 
-	padding: 0 20px 4rem;
-
-	// everything over 768px (tablet screens)
-	@media handheld, screen and (min-width: 768px) {
-		padding: 0 20% 5rem;
-	}
-}
-
-.about > .wrapper > .section-title,
-.case-section > .section-title,
-.hire > .wrapper > .section-title {
-	@media handheld, screen and (min-width: 992px) {
-		@include span(8);
-	}
-
-	@media handheld, screen and (min-width: 1200px) {
-		@include span(9);
-		text-align: left;
-	}
 }
 
 .about .services {
@@ -343,6 +280,7 @@ div.quote {
   .step {
     @include span(16 of 16);
     margin-bottom: 2rem;
+    text-align: center;
 		&:first-child { margin-top: 75px; }
 		&:last-child { margin-bottom: 75px; }
   }
@@ -377,14 +315,18 @@ div.quote {
 
 @media handheld, screen and (min-width: 768px) {
 	.process { 
-		padding: 0 90px 0; 
+		padding: 0 60px 0; 
 	}
 	.process .steps .step {
-		@include span(16 of 16);
+		@include span(8 of 16);
 		margin-bottom: 2rem;
-		text-align: center;
-		&:first-child { margin-top: 75px; }
-		&:last-child { margin-bottom: 75px; }
+		text-align: left;
+		padding-right: 15px;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+
+		&:nth-child(-n+2) { margin-top: 75px; } // first two elements
+		&:nth-last-of-type(-n+2) { margin-bottom: 75px; } // last two elements
 	}
 }
 
@@ -398,6 +340,7 @@ div.quote {
 		margin-top: 75px;
     margin-bottom: 75px;
     border-left: 3px solid $mirage;
+    padding-right: 0;
     &:first-child { border: none; }
 	}
 
@@ -571,7 +514,7 @@ div.quote {
 	}
 
 	@media handheld, screen and (min-width: 768px) {
-		padding: 80px 110px 60px;
+		padding: 80px 80px 30px;
 		margin: 0 25px;
 		position: relative;
 		top: 25px;
@@ -580,16 +523,20 @@ div.quote {
 			font-size: 2.125rem;
 		}
 	}
+
+	@media handheld, screen and (min-width: 992px) {
+		padding: 80px 110px 60px;
+	}
 }
 
 // custom dot hack for slick slider
 .details .testimonial-box ul.slick-dots {
-	opacity: 0;
+	opacity: 0; // hide for tablet and below
 	list-style-type: none;
 	margin: 10px 0 0;
 	padding: 0;
 
-	@media handheld, screen and (min-width: 768px) {
+	@media handheld, screen and (min-width: 992px) {
 		opacity: 1;
 	}
 
@@ -643,7 +590,7 @@ div.quote {
 		text-align: center;
 	}
 
-	@media handheld, screen and (min-width: 768px) {
+	@media handheld, screen and (min-width: 992px) {
 		display: block;
 	}
 }
@@ -679,8 +626,12 @@ div.quote {
 	}
 
 	@media handheld, screen and (min-width: 768px) {
-		margin: 0 25px;
+		margin: 60px 25px 0;
 		padding: 60px;
+	}
+
+	@media handheld, screen and (min-width: 992px) {
+		margin: 0 25px;
 	}
 }
 
@@ -695,6 +646,10 @@ form.request-quote {
 	}
 
 	@media handheld, screen and (min-width: 768px) {
+		.form-group { @include span(18); }
+	}
+
+	@media handheld, screen and (min-width: 992px) {
 		.form-group {
 			@include span(9);
 			&:nth-child(odd) {
@@ -746,68 +701,9 @@ form.request-quote {
 	.request-quote textarea::-moz-placeholder { color: lighten($airforce, 10%); opacity: 1; }
 }
 
+
 /**
-  * Standard Sections
-  * Used in about and portfolio
-  */
-.wrapper > .section-title,
-.case-section > .section-title {
-	text-align: center;
-
- 	@media handheld, screen and (min-width: 992px) {
- 		text-align: left;
-		@include span(9);
-	}
-}
-
-.case-section > .section-content {
-	text-align: left;
- 	@media handheld, screen and (min-width: 992px) {
-		@include span(9);
-	}
-
-	p {
-		// font-size: 19px;
-		// line-height: 1.4;
-		letter-spacing: .03rem;
-		line-height: 1.6;
-		font-family: $title-sans;
-		font-weight: 300;
-		font-size: .925rem;
-	}
-
-	h4.title {
-		font-family: $chaparral;
-		letter-spacing: .015rem;
-		font-size: 2rem;
-		line-height: 1.2;
-    color: $fade;
-    margin-bottom: 20px;
-	}
-}
-
-.section-title > h3.title {
-	font-size: 6rem;
-	line-height: 7rem;
-	text-shadow: 3px 3px 0px #E6E2E2;
-
-	@media handheld, screen and (min-width: 768px) {
-		font-size: 9rem;
-		line-height: 9.5rem;
-	}
-
-	@media handheld, screen and (min-width: 992px) {
-		font-size: 10rem;
-		line-height: 10.3rem;
-	}
-
-	@media handheld, screen and (min-width: 1200px) {
-		font-size: 12rem;
-		line-height: 10.88rem;
-	}
-}
-/**
-  * Testimonials
+  * Testimonials Page
   * testimonials.html
   */
 .testimonial {
@@ -890,11 +786,11 @@ form.request-quote {
 .site-footer {
 	background: $gunmetal;
 	border: none;
-	padding: 40px 60px;
+	padding: 40px 0;
 	text-align: center;
 
 	.wrapper {
-		padding: 0 60px;
+		padding: 0 20px;
 	}
 
 	span {
@@ -903,6 +799,15 @@ form.request-quote {
 		opacity: .5;
 		color: $airforce;
 		font-size: .85rem;
+	}
+
+	@media handheld, screen and (min-width: 768px) {
+		padding: 40px 0;
+		.wrapper { padding: 0 60px; }
+	}
+
+	@media handheld, screen and (min-width: 992px) {
+		padding: 40px 60px;
 	}
 }
 
@@ -922,23 +827,6 @@ form.request-quote {
 
 		&:last-child { border: none; }
 	}
-}
-
-.hire {
-	padding: 15px 0 20px;
-	clear: both;
-
- 	@media handheld, screen and (min-width: 992px) {
- 		padding: 10px 0 55px;
- 	}
-}
-
-.hire .section-half {
-	margin: 20px 0 0;
-
- 	@media handheld, screen and (min-width: 992px) {
- 		margin: 90px 0 0;
- 	}
 }
 
 /**

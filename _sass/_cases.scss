@@ -1,21 +1,56 @@
+// primarily used in case-title template
+.page-title {
+	height: 405px;
+	position: relative;
+	background-color: #2C3438;
+	background-size: cover;
+	overflow: hidden; // hide screen overflow
+	text-align: center;
+	color: #fff;
+
+	.overlay {
+		@extend .case-overlay;
+
+		&.-spacedojo { background-position: 0% 30%; }
+		&.-sos { background-position: 70% 0%; }
+		&.-tbb { background-position: 20% 0%; }
+		&.-testimonials { background-position: 0% 60%; }
+
+		@media handheld, screen and (min-width: 768px) {
+			&.-spacedojo { background-position: 0% 30%; }
+			&.-sos { background-position: 0% 30%; }
+			&.-tbb { background-position: 50% 50%; }
+			&.-testimonials { background-position: 0% 60%; }
+		}
+	}
+
+	> .screen {
+		@include overlay(11,25,31,.78);
+		padding: 180px 0 0 0;
+		position: absolute;
+	}
+}
+
+.page-title > .screen > span.properties {
+	margin: 0;
+}
+
+
 .case-study {
 	float: left;
 	width: 100vw;
-	height: 540px;
+	height: 510px;
 	position: relative;
 	margin-right: -.003rem;
 	background: #2C3438;
 	overflow: hidden;
 	display: none;
 
-	&.slide-1 { display: block; } // initialize first slide
-
 	h3.headline {
 		font-family: $chaparral;
-		font-size: 2.125rem;
-		line-height: 2.5rem;
+		font-size: 2rem;
+		line-height: 1.3;
 		color: $fade;
-		padding: 0 30px;
   }
 
 	> .screen {
@@ -24,30 +59,22 @@
 		@include overlay(11,25,31,.78);
 	}
 
-	// everything over 768px (tablet screens)
-	@media handheld, screen and (min-width: 768px) {
-		h3.headline {
-			padding: 0;
-		}
+	@media screen and (min-width: 768px) {
+		height: 400px;
+		h3.headline { font-size: 2.125rem; }
+		> .screen { padding: 90px 0 0; }
 	}
 
 	@media screen and (min-width: 992px) {
 		height: 350px;
 		h3.headline { font-size: 2.125rem; }
-
-		> .screen {
-			padding: 90px 0 0;
-		}
+		> .screen { padding: 90px 0 0; }
 	}
 
 	@media screen and (min-width: 1200px) {
 		height: 430px;
-		h3.headline { 
-			font-size: 2.125rem; 
-		}
-		> .screen {
-			padding: 130px 0 0;
-		}
+		h3.headline { font-size: 2.125rem; }
+		> .screen { padding: 130px 0 0; }
 	}
   
   .case {
@@ -69,11 +96,9 @@
 	}
 }
 
-// hide arrows for mobile phones
-.arrow-link {
-	visibility: hidden;
-	@media handheld, screen and (min-width: 768px) {
-		visibility: visible;
+.arrow-link { 
+	@media handheld, screen and (max-width: 768px) {
+		visibility: hidden; // hide arrows for mobile phones
 	}
 }
 
@@ -88,12 +113,20 @@
 	}
 }
 
-.right-arrow {
-	right: 12px;
+// everything over 768px (tablet screens)
+@media handheld, screen and (min-width: 768px) {
+	.right-arrow { right: 5px; }
+	.left-arrow { left: 5px; }
 }
 
-.left-arrow {
-	left: 12px;
+@media handheld, screen and (min-width: 992px) {
+	.right-arrow { right: 9px; }
+	.left-arrow { left: 9px; }
+}
+
+@media handheld, screen and (min-width: 1200px) {
+	.right-arrow { right: 12px; }
+	.left-arrow { left: 12px; }
 }
 
 .case-studies .wrapper,
@@ -126,10 +159,22 @@
 	margin: 0 15px;
 }
 
+@media handheld, screen and (max-width: 768px) {
+	.page-title span.divider {
+		display: none;
+	}
 
-.case-study .case-info,
-.page-title .case-info {
+	.page-title span.properties {
+		display: block;
+	}
+}
+
+.case-study .case-info {
 	@include span(18);
+
+	@media handheld, screen and (min-width: 768px) {
+		@include span(12);
+	}
 	
 	@media handheld, screen and (min-width: 992px) {
 		text-align: left;
@@ -145,8 +190,12 @@
 }
 
 .case-study .read-more {
-	text-align: center;
 	@include span(18);
+
+	@media handheld, screen and (min-width: 768px) {
+		text-align: center;
+		@include span(6);
+	}
 	
 	@media handheld, screen and (min-width: 992px) {
 		text-align: left;
@@ -159,18 +208,32 @@
 	}
 }
 
+.case-study .case-info,
+.case-study .read-more {
+	// mobile only
+	@media handheld, screen and (max-width: 768px) {
+		padding: 0 30px;
+
+		.button { display: block; }
+	}
+}
+
+
 .case-study .read-more .button {
 	border-color: lighten($airforce, 15%);
 	color: lighten($airforce, 15%); 
-	margin-top: 3.15rem;
+	margin-top: 1.75rem;
+
+	@media handheld, screen and (min-width: 768px) {
+		margin-top: 3.15rem;
+	}
 
 	@media handheld, screen and (min-width: 992px) {
 		float: right;
 	}
 }
 
-.case-study span.title, 
-.page-title h4.name {
+.case-study span.title {
 	font-family: $title-sans;
 	color: $airforce;
 }
@@ -181,67 +244,92 @@
 	opacity: .75;
 }
 
-.page-title {
-	height: 405px;
-	position: relative;
-	background-color: #2C3438;
-	background-size: cover;
-	overflow: hidden; // hide screen overflow
-	text-align: center;
-	color: #fff;
-
-	.overlay {
-		@extend .case-overlay;
-
-		&.-spacedojo { background-position: 0% 30%; }
-		&.-sos { background-position: 70% 0%; }
-		&.-tbb { background-position: 20% 0%; }
-		&.-testimonials { background-position: 0% 60%; }
-
-		@media handheld, screen and (min-width: 768px) {
-			&.-spacedojo { background-position: 0% 30%; }
-			&.-sos { background-position: 0% 30%; }
-			&.-tbb { background-position: 50% 50%; }
-			&.-testimonials { background-position: 0% 60%; }
-		}
-	}
-
-	> .screen {
-		@include overlay(11,25,31,.78);
-		padding: 180px 0 0 0;
-		position: absolute;
-	}
-
-}
-
-.page-title > .screen > h4.name,
-.page-title > .screen > span.properties {
-	margin: 0;
-}
 
 .case-section {
+	position: relative;
 	padding: 60px 40px 0;
 	@include clearfix;
 	background: $gunmetal;
-	margin-bottom: 80px;
+	margin-bottom: 0;
 
 	@media handheld, screen and (min-width: 768px) {
 		padding: 60px;
+		margin-bottom: 0;
 	}
 
 	@media handheld, screen and (min-width: 992px) {
 		padding: 100px 100px 60px;
-	}
-}
-
-.case-section {
-	position: relative; 
-
-	@media handheld, screen and (min-width: 992px) {
 		top: -45px;
 		margin: 0 100px 40px;
 	}
 }
+
+
+// ABOUT THE PROJECT
+.section-title > ul.about {
+	list-style-type: none;
+	margin: 0;
+	padding: 60px 0 0;
+	border-radius: 2px;
+	position: relative;
+	text-align: left;
+	top: -25px;
+
+	li {
+		margin-bottom: 30px;
+		opacity: .75;
+		border-bottom: 2px solid $pelo;
+		padding-bottom: 20px;
+		font-size: .925rem;
+		letter-spacing: .015rem;
+		line-height: 1.2;
+		font-weight: 300;
+		font-family: $title-sans;
+
+		&:last-child { border: none; }
+	}
+
+	li span {
+		display: block;
+		text-transform: uppercase;
+		margin-top: 5px;
+		line-height: 1;
+		letter-spacing: .03rem;
+		font-family: $title-sans;
+		font-weight: 500;
+		font-size: .8rem;
+		opacity: 1;
+		color: $pelo;
+	}
+
+	@media handheld, screen and (min-width: 992px) {
+		padding: 35px 50px 20px 30px;
+	}
+}
+
+.section-full { 
+	@include span(18); 
+	padding: 0 20px 2rem;
+
+	@media handheld, screen and (min-width: 768px) {
+		padding: 0 20% 5rem;
+	}
+}
+
+.case-section > .section-title {
+	@media handheld, screen and (min-width: 992px) {
+		@include span(8);
+	}
+
+	@media handheld, screen and (min-width: 1200px) {
+		@include span(9);
+	}
+}
+
+
+
+
+// CASE OVERLAY
 
 .case-overlay {
 	position: absolute;
