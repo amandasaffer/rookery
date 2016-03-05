@@ -264,6 +264,32 @@
 	}
 }
 
+.case-section > .section-content {		
+	text-align: left;		
+ 	@media handheld, screen and (min-width: 992px) {		
+		@include span(9);		
+	}		
+		
+	p {		
+		// font-size: 19px;		
+		// line-height: 1.4;		
+		letter-spacing: .03rem;		
+		line-height: 1.6;		
+		font-family: $title-sans;		
+		font-weight: 300;		
+		font-size: .925rem;		
+	}		
+  		  
+	h4.title {		
+		font-family: $chaparral;		
+		letter-spacing: .015rem;		
+		font-size: 2rem;		
+		line-height: 1.2;		
+    color: $fade;		
+    margin-bottom: 20px;		
+	}		
+}
+
 
 // ABOUT THE PROJECT
 .section-title > ul.about {
