@@ -119,6 +119,14 @@
 		padding: 0 50px 50px;
 	}
 
+	img.logo {
+		position: absolute; 
+		left: 35px; 
+		top: 25px; 
+		width: 50px; 
+		height: auto;
+	}
+
 	@media handheld, screen and (min-width: 768px) {
 		height: 70vh;
 		h1.headline {
@@ -134,7 +142,7 @@
 		h1.headline {
 			font-size: 3.75rem;
 			line-height: 1.1;
-			padding: 0;
+			padding: 0 0 40px;
 		}
 	}
 
@@ -142,12 +150,7 @@
 		h1.headline {
 			font-size: 4rem;
 			line-height: 1.2;
-		}
-
-		img.logo {
-			width: 350px; 
-			height: 100px; 
-			margin-bottom: 60px;
+			padding: 0 0 40px;
 		}
 	}
 }
@@ -158,12 +161,11 @@
 
 	@media handheld, screen and (min-width: 992px) {
 		@include span(18);
-		padding-top: 29vh;
+		padding-top: 33vh;
 	}
 
 	@media handheld, screen and (min-width: 1200px) {
-		padding: 100px 0 50px;
-		margin-top: 10vh;
+		padding-top: 35vh;
 	}
 
 	a.sublink {
