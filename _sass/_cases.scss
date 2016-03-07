@@ -109,9 +109,9 @@
 	top: 45%;
 	overflow: hidden;
 	height: 38px;
-	width: 40px;
+	width: 38px;
 	padding: 10px 0 0 5px;
-	background: $airforce;
+	background: darken($airforce, 15%);
 
 	&:hover {
 		background: $pelo;
