@@ -107,9 +107,14 @@
 	position: absolute;
 	z-index: 460;
 	top: 45%;
+	overflow: hidden;
+	height: 38px;
+	width: 40px;
+	padding: 10px 0 0 5px;
+	background: $airforce;
 
 	&:hover {
-		opacity: .75;
+		background: $pelo;
 		cursor: pointer;
 	}
 }
@@ -126,8 +131,8 @@
 }
 
 @media handheld, screen and (min-width: 1200px) {
-	.right-arrow { right: 12px; }
-	.left-arrow { left: 12px; }
+	.right-arrow { right: 0px; }
+	.left-arrow { left: 0px; }
 }
 
 .case-studies .wrapper,
@@ -226,7 +231,7 @@
 	margin-top: 1.75rem;
 
 	@media handheld, screen and (min-width: 768px) {
-		margin-top: 3.15rem;
+		margin-top: 3.6rem;
 	}
 
 	@media handheld, screen and (min-width: 992px) {
