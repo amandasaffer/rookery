@@ -19,7 +19,7 @@ $(document).ready(function() {
   preload('-betkong', 'esports.jpg');
   preload('-woofgang', 'sonya.jpg');
   preload('-testimonials', 'head.jpg');
-  // preload('landing', 'head.jpg');
+  preload('landing', 'woods1.jpg');
 
 
 
