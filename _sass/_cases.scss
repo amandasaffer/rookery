@@ -362,7 +362,6 @@
 
 
 // CASE OVERLAY
-
 .case-overlay {
 	position: absolute;
 	top: 0;
@@ -370,6 +369,10 @@
 	height: 100%;
 	width: 100%;
 	-webkit-filter: unquote("grayscale(100%)"); 
+	-moz-filter: unquote("grayscale(100%)");
+  -ms-filter: unquote("grayscale(100%)");
+  -o-filter: unquote("grayscale(100%)");
+  filter: unquote("grayscale(100%)");
 	background-size: cover;
 	background-position: 50% 50%;
 
