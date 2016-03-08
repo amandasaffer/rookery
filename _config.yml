@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   The Rookery specializes in web design, web development,
   and logo design. We help small businesses and entrepreneurs bring 
   their ideas to life.
-baseurl: "/rookery" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rookery.design" # the base hostname & protocol for your site
 twitter_username: ajsaffer
 github_username:  amandasaffer
