@@ -1,4 +1,4 @@
-<div class="quote">
+<div id="contact" class="quote">
 	<div class="wrapper">
 		<div class="box-content">
 			<div class="box-header">
@@ -7,31 +7,31 @@
 			</div>
 
 			<!-- todo: set up focuspocus.io -->
-			<form class="request-quote wrapper">
+			<form class="request-quote wrapper" accept-charset="UTF-8" action="http://formspree.io/amandasaffer@gmail.com" method="POST">
+				<input type="hidden" name="utf8" value="✓">
 				<div class="form-group">
 					<label for="name">Full Name</label>
-					<input id="name" type="text" placeholder="">
+					<input id="name" type="text" name="name" title="Your full name" required />
 				</div>
 				<div class="form-group">
 					<label for="email">Email Address</label>
-					<input id="email" type="email" placeholder="">
+					<input id="email" type="email" name="email" title="Your email address" required />
 				</div>
 				<div class="form-group">
 					<label for="organization">Organization (optional)</label>
-					<input id="organization" type="text" placeholder="">
+					<input id="organization" type="text" name="organization" title="Your organization" required />
 				</div>
 				<div class="form-group">
 					<label for="budget">Ballpark Budget</label>
-					<input id="budget" type="text" placeholder="">
+					<input id="budget" type="text" name="budget" title="Your Budget" required />
 				</div>
 				<div class="form-group">
 					<label for="about">Tell us about your brand and your goals</label>
-					<!-- <span class="sublabel">Lorem ipsum dolor sit amet draco dormiens</span> -->
-					<textarea id="about"></textarea>
+					<textarea id="about" name="about" required></textarea>
 				</div>
 				<div class="form-group">
 					<label for="services">Please describe the project</label>
-					<textarea id="services" placeholder=""></textarea>
+					<textarea id="services" name="services" required></textarea>
 				</div>
 
 				<button class="light" type="submit">Submit</button>
