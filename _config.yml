@@ -9,8 +9,8 @@
 title: The Rookery - Web Design and Development
 email: amandasaffer@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  The Rookery specializes in web design, web development,
-  and logo design. We help small businesses and entrepreneurs bring 
+  The Rookery is a design studio ran by Amanda Saffer and Dustin 
+  Cooper. We help small businesses and entrepreneurs bring 
   their ideas to life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rookery.design" # the base hostname & protocol for your site
