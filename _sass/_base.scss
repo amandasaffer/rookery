@@ -33,11 +33,15 @@ body.menu-open {
 }
 
 p {
-    font-family: $chaparral;
-    font-size: 17px;
-    color: darken(#C8D4D8, 15%);
-    letter-spacing: 0.23px;
-    line-height: 1.5;
+    letter-spacing: .03rem;
+    line-height: 1.6;
+    color: $mirage;
+    font-family: $title-sans;
+    font-weight: 300;
+    font-size: .925rem;
+    font-size: 0.875rem;
+
+    strong { font-weight: 700; }
 }
 
 /**
@@ -59,7 +63,6 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
-
 
 
 /**
@@ -96,10 +99,52 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
+    font-family: $title-sans;
+    font-weight: 300;
+    color: $mirage;
+}
+
+h1.headline {
+    color: #333;
+    font-size: 22px;
+    line-height: 1.2;
+    padding: 0 50px 50px;
 }
 
 h2 {
     letter-spacing: .03rem;
+}
+
+h2.subhead {
+    text-align: center;
+    color: $mirage;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+h3.section {
+    font-size: 0.925rem;
+    font-weight: 500;
+    letter-spacing: .075rem;
+    text-transform: uppercase;
+    color: $mirage;
+
+    &.-left { margin-bottom: 2rem; }
+}
+
+@media handheld, screen and (min-width: 768px) {
+    h1.headline {
+        font-size: 2.125rem;
+        line-height: 1.5;
+        padding: 0 0 25px;
+    }
+    h2.subhead { font-size: 1.2rem; }
+}
+
+@media handheld, screen and (min-width: 992px) {
+    h1.headline { font-size: 2.125rem; }
+    h2.subhead { font-size: 1.2rem; }
 }
 
 
@@ -108,17 +153,9 @@ h2 {
  * Links
  */
 a {
-    color: #fff;
-    text-decoration: none;
-
-    &:visited {
-        color: #fff;
-    }
-
-    &:hover {
-        color: #fff;
-        text-decoration: underline;
-    }
+    color: $airforce;
+    &:visited { color: $airforce; }
+    &:hover { color: $airforce; }
 }
 
 a.button, button {
@@ -127,11 +164,23 @@ a.button, button {
     display: inline-block;
     padding: 18px 35px 15px;
     border: 2px solid $mirage;
-    font-size: 1rem;
+    color: $mirage;
+    font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: .075rem;
     font-family: $title-sans;
     text-transform: uppercase;
+
+    &:hover {
+        text-decoration: none;
+        color: $mirage;
+        opacity: .5;
+    }
+
+    &:active {
+        position: relative;
+        top: 1px;
+    }
 
     &.light {
         border-color: white;
@@ -142,6 +191,21 @@ a.button, button {
         opacity: .75;
         text-decoration: none;
     }
+
+    &.-social {
+        width: 100%;
+        padding: 15px 25px 15px;
+        i.ion {
+            font-size: 1.15rem;
+            position: relative;
+            right: 2px;
+            top: 2px;
+        }
+    }
+    &.-dribbble { border-color: #C32361; color: #C32361; }
+    &.-twitter { border-color: #1DA1F2; color: #1DA1F2; }
+    &.-tumblr { border-color: lighten(#36465D, 5%); color: lighten(#36465D, 5%); }
+    &.-instagram { border-color: #F78041; color: #F78041; }
 }
 
 
@@ -209,7 +273,6 @@ pre {
  * Icons
  */
 .icon {
-
     > svg {
         display: inline-block;
         width: 16px;
@@ -219,5 +282,52 @@ pre {
         path {
             fill: $grey-color;
         }
+    }
+
+    &.icon-design, &.icon-art-direction {
+        position: relative;
+        left: -10px;
+    }
+}
+
+/**
+ *  Navigation, etc.
+ */
+img.logo {
+    position: absolute;
+    left: 25px;
+    top: 20px;
+    width: 120px;
+    height: auto;
+}
+
+nav#header {
+    // background: #f8f8f8;
+    height: 90px;
+    width: 100%;
+}
+
+#landing > nav#header { background: none; }
+
+ul.nav {
+    position: absolute;
+    right: 35px;
+    top: 33px;
+    // list
+    list-style-type: none;
+    margin: 0; padding: 0;
+    li { display: inline; }
+    li a {
+        font-family: $title-sans;
+        font-weight: 300;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        color: $mirage;
+        margin: 40px;
+        &:last-child { margin-right: 0; }
+    }
+    li a:hover {
+        text-decoration: none;
+        color: $airforce;
     }
 }

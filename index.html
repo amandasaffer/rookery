@@ -2,26 +2,27 @@
 layout: landing
 ---
 
-{% include about.html %}
-{% assign featuredCases = site.cases | where: "category", "featured" | sort: 'order' %}
-
-<div class="case-studies">
-  
-  <div class="wrapper">
-    <div class="projects tag">
-      <span class="title">Recent Projects</span>
-      <!-- <span class="count">1/5</span> -->
+<div class="container">
+    <div class="col-md-6 col-centered text-center">
+        <h3 class="section">Our Projects</h3>
+        <p>We work with businesses and entrepreneurs on everything from branding &amp; identity to fully custom design &amp; development.</p>
     </div>
-  </div>
-
-  <div class="featured-cases">
-    {% for case in featuredCases %}
-      {% include case-preview.html %}
-    {% endfor %}
-  </div>
-
-  {% include process.html %}
-  {% include details.html %}
-  {% include requestquote.html %}
-  {% include svgs.html %}
 </div>
+
+<div class="container">
+    <div class="row featured-cases">
+        {% assign featuredCases = site.cases | where: "category", "featured" | sort: 'order' %}
+        {% for case in featuredCases %}
+            <div class="col-md-6">
+                <a href="{{ case.permalink }}" class="case">
+                    <img src="/img/{{ case.css }}.png">
+                    <div class="overlay">
+                        <span class="case-title">{{ case.title }} {% if case.service.size > 1 %} <span class="service">| {{ case.service }}</span> {% endif %}</span>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% include requestquote.html %}

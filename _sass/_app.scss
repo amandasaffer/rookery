@@ -40,12 +40,12 @@
 		transition: background, .2s;
 		position: fixed;
 
-		span.bar { 
+		span.bar {
 			width: 28px;
 			transition: all 500ms ease-in-out; // smooth transition
 		}
 
-	  span.bar:nth-of-type(1) {	
+	  span.bar:nth-of-type(1) {
 			-webkit-transform:rotate(-45deg) translateY(5px) translateX(-3px);
 			transform:rotate(-45deg) translateY(5px) translateX(-3px);
 	  }
@@ -61,41 +61,13 @@
 	}
 }
 
-#expanded-menu {
- 	background: darken(#163D50, 11%);
- 	font-family: $base-font-family;
- 	font-weight: 300;
- 	letter-spacing: .03rem;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 99;
-  padding-left: 8%;
-
-  display: none;
-  align-items: center;
-
-	> ul.nav {
-		list-style-type: none;
-		margin: 0;
-		padding: .5rem 2.5rem .4rem .4rem;
-	}
-
-	> ul.nav > a { color: #fff; }
-
-	li {
-		padding: 8px 10px;
-		font-size: 2rem;
-	}
-
-	@media handheld, screen and (min-width: 768px) {
-  	padding-left: 8%;
-  	li { font-size: 3rem; }
-  }
-
-	a:last-child li { border: none; }
+/**
+  * Page Layouts
+  * For page layouts
+  */
+.page-title {
+	margin-top: 13vh;
+	margin-bottom: 5rem;
 }
 
 /**
@@ -103,498 +75,127 @@
   * Only for home page
   */
 #landing {
-	background-image: url('/img/woods1-small.jpg');
+	background-image: url('/img/mountain.jpg');
 	background-size: cover;
-	background-position: 50% 50%;
+	background-position: 50% 100%;
 	background-repeat: no-repeat;
-	box-shadow: inset 0 0 0 1000px rgba(11,22,27,.85);
-	height: 85vh;
+	box-shadow: inset 0 0 0 1000px rgba(255,255,255,.25);
+	height: 72vh;
 	color: #fff;
 
-	h1.headline {
-		font-family: $chaparral;
-		font-size: 2rem;
-		line-height: 1.2;
-		text-shadow: 3px 3px 5px #222;
-		padding: 0 50px 50px;
-	}
-
-	img.logo {
-		position: absolute; 
-		left: 35px; 
-		top: 25px; 
-		width: 50px; 
-		height: auto;
-	}
-
 	@media handheld, screen and (min-width: 768px) {
-		height: 70vh;
-		h1.headline {
-			font-size: 3rem;
-			line-height: 1.1;
-			padding: 0 40px 40px;
-		}
+		height: 72vh;
+		margin-bottom: 6rem;
 	}
 
 	@media handheld, screen and (min-width: 992px) {
-		height: 100vh;
+		height: 72vh;
 		background-attachment: fixed; // desktop only
-		h1.headline {
-			font-size: 3.75rem;
-			line-height: 1.1;
-			padding: 0 0 40px;
-		}
-	}
-
-	@media handheld, screen and (min-width: 1200px) {
-		h1.headline {
-			font-size: 4rem;
-			line-height: 1.2;
-			padding: 0 0 40px;
-		}
 	}
 }
 
-#landing > .wrapper > .content {
-	text-align: center;
-	padding-top: 22vh;
+#landing > .intro > .row {
+	padding-top: 16vh;
+
+	a.button:hover {
+		text-decoration: none;
+		opacity: .5;
+	}
 
 	@media handheld, screen and (min-width: 992px) {
-		@include span(18);
-		padding-top: 33vh;
+		padding-top: 16vh;
 	}
 
 	@media handheld, screen and (min-width: 1200px) {
-		padding-top: 35vh;
-	}
-
-	a.sublink {
-		color: white;
-		font-family: $title-sans;
-		text-transform: uppercase;
-		display: block;
-		margin-top: 1rem;
+		padding-top: 16vh;
 	}
 }
 
 
-/**
-  * LANDING CONTENT SECTIONS
-  * Services, process, and details
-  */
-div.about, div.details {
-	background-color: darken(#163D50, 13%);
- 	padding: 60px 0 0;
+/*
+ * Content Sections
+ * About Us, Services, Married
+ */
 
- 	h2.subhead {
- 		color: #E8EEF0;
- 		font-family: $chaparral;
- 		font-size: 1.25rem;
- 		line-height: 1.3;
- 		margin-bottom: 0;
- 	}
+div.about {
+	// background: $light;
+	padding: 45px 0 0;
+	margin: 0 0 3rem;
 
- 	@media handheld, screen and (min-width: 768px) {
- 		h2.subhead { font-size: 1.5rem; }
- 	}
-
- 	@media handheld, screen and (min-width: 992px) {
- 		padding: 120px 0 115px;
- 		h2.subhead { font-size: 1.75rem; }
- 	}
+    .container { border-bottom: 2px solid $light; }
 }
 
-div.quote {
-	background-color: darken(#163D50, 13%);
-	padding-bottom: 115px;
-}
-
-.about .services {
-  @include with-layout(16 static); // temporarily reset grid in here
-
+div.about .services {
   .service {
-  	text-align: center;
-    @include span(16 of 16);
     margin-bottom: 3rem;
-    padding: 0 30px;
-  }
-
-   @media handheld, screen and (min-width: 768px) {
-  	.service { @include span(4 of 16); }
-  	margin-bottom: 0;
-  	padding: 0;
+    padding: 0 15px;
   }
 
   .service > span.title {
   	text-transform: uppercase;
   	font-family: $title-sans;
-  	font-weight: 600;
-  	letter-spacing: .05rem;
-  	font-size: 1.1rem;
-  	color: darken(#E8EEF0, 10%);
+  	font-weight: 500;
+  	letter-spacing: .075rem;
+  	font-size: 0.85rem;
+  	color: $mirage;
   	display: block;
   	margin-bottom: .2rem;
   }
 
   .service > span.about {
+  	padding-top: 0;
   	display: block;
-  	color: darken(#E8EEF0, 35%);
+  	color: $mirage;
   	line-height: 1.3;
-		font-family: $title-sans;
-		font-weight: 300;
-		font-size: 1.1rem;
-  }
-
-  .service > .service-icon {
-  	height: 75px;
-  	width: 75px;
-  	margin-bottom: 1rem;
+	font-family: $title-sans;
+	font-weight: 300;
+	font-size: 0.925rem;
+	letter-spacing: 0.3px;
+    opacity: 0.7;
   }
 
   @media handheld, screen and (min-width: 768px) {
   	.service > span.title,
   	.service > span.about {
-  		font-size: .925rem;
+  		margin-top: 0.2rem;
+  		margin-bottom: 0.3rem;
+  		font-size: 0.8rem;
   	}
 
-  	.service > span.about {
-  		margin-bottom: .5rem;
-  		line-height: 1.5;
-  	}
+    .service > span.title { font-size: 0.75rem; }
+  	.service > span.about { line-height: 1.5; }
   }
 }
 
-/**
-  * Process
-  * _includes/process.html
-  *
-  */
-.process {
-	background-color: $gunmetal;
-  display: block;
-  @include clearfix;
-  padding: 0 40px 0; 
+div.we-married {
+    h4.name {
+        font-size: 1.3rem;
+        margin: 0 0 0.5rem;
+    }
+
+    img.team-photo {
+        border-radius: 2px;
+    }
 }
 
-.process .steps {
-  @include with-layout(16 static); // temporarily reset grid in here
-
-  .step {
-    @include span(16 of 16);
-    margin-bottom: 2rem;
-    text-align: center;
-		&:first-child { margin-top: 75px; }
-		&:last-child { margin-bottom: 75px; }
-  }
-
-  .step > span.title {
-  	text-transform: uppercase;
-  	font-family: $title-sans;
-  	color: darken($fade, 10%);
-  	display: block;
-  	margin-bottom: .3rem;
-  	font-weight: 600;
-  	letter-spacing: .05rem;
-  	font-size: .925rem;
-
-  	span { opacity: .75; 
-  				 color: $airforce;
-  				 margin-right: 3px; }
-  }
-
-  .step > span.details {
-  	display: block;
-		opacity: 0.66;
-		color: #BED6DE;
-  	line-height: 1.5;
-  	padding-right: 5px;
-  	font-family: $title-sans;
-		font-weight: 300;
-		font-size: .925rem;
-  }
+div.social-links {
+    // border-top: 2px solid $light;
+    // border-bottom: 2px solid $light;
+    // @include vertical-padding(40px);
+    margin: 2.5rem auto 0;
 }
 
-
-@media handheld, screen and (min-width: 768px) {
-	.process { 
-		padding: 0 60px 0; 
-	}
-	.process .steps .step {
-		@include span(8 of 16);
-		margin-bottom: 2rem;
-		text-align: left;
-		padding-right: 15px;
-		&:first-child { margin-top: 0; }
-		&:last-child { margin-bottom: 0; }
-
-		&:nth-child(-n+2) { margin-top: 75px; } // first two elements
-		&:nth-last-of-type(-n+2) { margin-bottom: 75px; } // last two elements
-	}
-}
-
-@media handheld, screen and (min-width: 992px) {
-	.process { 
-		padding: 0 40px 0; 
-	}
-	.process .steps .step {
-		@include span(4 of 16);
-		text-align: left;
-		margin-top: 75px;
-    margin-bottom: 75px;
-    border-left: 3px solid $mirage;
-    padding-right: 0;
-    &:first-child { border: none; }
-	}
-
-	.step span.title,
-	.step span.details {
-		padding-left: .75rem;
-	}
-}
-
-@media handheld, screen and (min-width: 1200px) {
-	.process { 
-		padding: 0 50px 0; 
-	}
-	.process .steps .step {
-		@include span(4 of 16);
-		margin-top: 75px;
-    margin-bottom: 75px;
-	}
-}
-
-
-/**
-  * Details
-  * _includes/details.html
-  */
-.details .personal {
-	@include span(18);
-	padding: 30px;
-
-	@media handheld, screen and (min-width: 768px) {
-		@include span(9);
-		padding: 60px;
-
-		&:first-child { 
-			padding-left: 25px;
-			padding-bottom: 60px;
-		}
-		&:last-child { padding-right: 25px; }
-	}
-}
-
-.details .personal-details {
-	position: relative;
-	.person {
-		margin-bottom: 3rem;
-		&:last-child { margin-bottom: 3rem; }
-	}
-
-	.person h4.name, 
-	.person span.title {
-		text-transform: uppercase;
-  	font-family: $title-sans;
-  	letter-spacing: .04rem;
-  	display: block;
-	}
-	.person h4.name {
-  	font-size: 1.35em;
-  	font-weight: 500;
-  	color: $fade;
-  	margin-bottom: 0;
-	}
-	.person span.title {
-  	font-size: .825rem;
-  	color: $airforce;
-  	display: block;
-  	margin-bottom: 1rem;
-	}
-	.person p.about {
-		letter-spacing: .03rem;
-		line-height: 1.6;
-		font-family: $title-sans;
-		font-weight: 300;
-		font-size: .925rem;
-	}
-
-	div.social {
-		position: absolute;
-		bottom: 15px;
-		left: 25px;
-	}
-
-	div.social a {
-		display: inline;
-		margin-left: .5rem;
-		font-size: 1.75rem;
-		color: $airforce;
-		transition: opacity 200ms ease-out;
-	}
-
-	div.social a:hover {
-		opacity: .6;
-		transition: opacity 200ms ease-out;
-	}
-
-	@media handheld, screen and (min-width: 768px) {
-		div.social {
-			top: 24%;
-			right: 8%;
-			left: auto;
-		}
-
-		.person {
-			margin-bottom: 3.5rem;
-			&:last-child { margin-bottom: 0; }
-		}
-	}
-}
-
-.details .personal-details.border {
-	@media handheld, screen and (min-width: 768px) {
-		text-align: right;
-		border-right: 3px solid lighten($mirage, 3%);
-		border-bottom: 3px solid lighten($mirage, 3%);
-
-		div.social {
-			left: 10%;
-			right: auto;
-		}
-
-		&:after {
-			position: absolute;
-			background: darken(#163D50, 13%);
-			content: "&";
-			font-size: 3.75rem;
-			right: -24px;
-			top: 33%;
-			padding-top: 5px;
-			color: rgba($airforce, .3);
-		}
-	}
-}
-
-
-
-.details .testimonials {
-	margin-top: 2.5rem;
-	padding-bottom: 0;
-	@media handheld, screen and (min-width: 768px) {
-		margin-top: 0;
-		border-left: 3px solid lighten($mirage, 3%); 
-		border-bottom: 3px solid lighten($mirage, 3%);
-		position: relative;
-		top: -2px;
-	}
-}
-
-.details .testimonial-box {
-	background-image: url('/img/head.jpg');
-	box-sizing: border-box;
-	box-shadow: inset 0 0 0 1000px rgba(11,25,31,.81);
-	background-size: cover;
-	padding: 80px 20px 25px;
-	margin: 0;
-	text-align: center;
-
-	span.title {
-		display: block;
-		font-family: $title-sans;
-		text-transform: uppercase;
-		letter-spacing: .05rem;
-		font-size: .9375rem;
-		color: #688693;
-		line-height: 28px;
-		margin-bottom: 1.15rem;
-	}
-
-	h5.quote {
-		color: $fade;
-		font-size: 1.1rem;
-		line-height: 1.3;
-	}
-
-	@media handheld, screen and (min-width: 768px) {
-		padding: 80px 80px 30px;
-		margin: 0 25px;
-		position: relative;
-		top: 25px;
-
-		h5.quote {
-			font-size: 2.125rem;
-		}
-	}
-
-	@media handheld, screen and (min-width: 992px) {
-		padding: 80px 110px 60px;
-	}
-}
-
-// custom dot hack for slick slider
-.details .testimonial-box ul.slick-dots {
-	opacity: 0; // hide for tablet and below
-	list-style-type: none;
-	margin: 10px 0 0;
-	padding: 0;
-
-	@media handheld, screen and (min-width: 992px) {
-		opacity: 1;
-	}
-
-	li { display: inline; 
-			 position: relative; }
-
-	button { 
-		visibility: hidden;
-		margin: 0;
-		padding: 0 8px 0 0;
-	}
-
-	button:after { 
-		content:''; 
-	  visibility: visible;
-	  display: block;
-	  background-color: $airforce;
-	  opacity: .5;
-	  padding: 4px;
-	  margin: 0;
-	  position: absolute;
-	  top: 0;
-	  border-radius: 50%;
-	}
-
-	li[aria-controls='navigation10'] {
-		right: 1px;
-		button:after { left: 0; }
-	}
-
-	li[aria-hidden='false'] {
-		button:after { opacity: 1; }
-	}
-
-	li[aria-hidden='true'] {
-		button:after { opacity: .5; }
-	}
-}
-
-.tag-wrapper, {
-	position: relative;
-	display: none;
-
-	.tag {
-		right: 42.5%;
-		left: 42.5%;
-		bottom: -45px;
-	}
-
-	.quotes {
-		text-align: center;
-	}
-
-	@media handheld, screen and (min-width: 992px) {
-		display: block;
-	}
+div.other-projects {
+    background: $mirage;
+    margin-top: 5rem;
+    @include vertical-padding(80px);
+    // heading
+    .heading {
+        padding-bottom: 2rem !important;
+        h3, p { color: $light; }
+    }
+    // images
+    img.dribbble-photo { border-radius: 2px; }
 }
 
 /**
@@ -602,97 +203,73 @@ div.quote {
   * _includes/requestquote.html
   */
 .box-content {
-	background: $gunmetal;
+	background: #fff;
 	padding: 40px 20px;
 	margin: 0;
+	border: 2px solid $light;
+	@include clearfix;
+
+	.box-header {
+		padding-right: 0;
+		@media handheld, screen and (min-width: 768px) {
+			padding-right: 30px;
+		}
+	}
 
 	.box-header h5.title {
-		font-family: $chaparral;
-		font-size: 3rem;
-		color: $fade;
-		letter-spacing: .02rem;
-		margin: 0;
+		font-family: $title-sans;
+		color: $mirage;
+		font-weight: 300;
+		font-size: 2rem;
+		line-height: 1.5;
+		margin: 0 0 10px;
 		padding: 0;
 	}
 
 	.box-header p {
 		padding: 0;
-		letter-spacing: .03rem;
-		line-height: 1.6;
-		font-family: $title-sans;
-		font-weight: 300;
-		font-size: .925rem;
-		@media handheld, screen and (min-width: 768px) {
-			padding-right: 40%;
-		}
 	}
 
 	@media handheld, screen and (min-width: 768px) {
-		margin: 60px 25px 0;
-		padding: 60px;
-	}
-
-	@media handheld, screen and (min-width: 992px) {
-		margin: 0 25px;
+		margin: 5rem 0 2rem;
+		padding: 85px 80px;
 	}
 }
 
 form.request-quote {
-	@include clearfix;
-	margin-top: 3rem;
-	
-	.form-group {
-		@include span(18);
-		margin-left: 0;
-		padding-left: 0;
-	}
-
-	@media handheld, screen and (min-width: 768px) {
-		.form-group { @include span(18); }
-	}
-
-	@media handheld, screen and (min-width: 992px) {
-		.form-group {
-			@include span(9);
-			margin-left: 0;
-			padding-left: 0;
-		}
-	}
-
 	label {
 		display: block;
 		font-family: $title-sans;
-		font-size: .875rem;
-		text-transform: uppercase;
-		margin-bottom: .15rem;
-		color: lighten($airforce, 15%);
-		letter-spacing: .03rem;
+		font-size: .8rem;
+		letter-spacing: .05px;
+		color: lighten($mirage, 10%);
+		margin-bottom: 10px;
 	}
 
-	input, textarea { 
+	input, textarea {
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
-		padding: 16px 18px 12px;
-		font-size: .925rem;
-		font-family: $title-sans;
-		line-height: 1.3;
-		font-weight: 300;
+		padding: 16px 15px 12px;
 		margin-bottom: 1.5rem;
-		background: transparent;
-		border: 1px solid #2C4852;
-		color: $fade;
-		letter-spacing: .025rem;
+		background: $light;
+		border: 1px solid $light;
+		// text
+		font-weight: 300;
+		font-family: $title-sans;
+		font-size: .8rem;
+		letter-spacing: .05px;
+		color: lighten($mirage, 10%);
+		&:focus { border: 1px solid $airforce; outline: 0 none; }
 	}
 
-	textarea { 
-		min-height: 120px; 
+	textarea {
+		min-height: 120px;
 		resize: none;
 	}
 
 	button {
-		border-color: lighten($airforce, 20%);
-		color: lighten($airforce, 20%);
+		margin: 0 auto;
 		cursor: pointer;
 	}
 
@@ -718,11 +295,11 @@ form.request-quote {
 		opacity: .75;
 	}
 
-	&:hover { background: darken(#f8f8f8, 2%); transition: background .2s ease-out; }
+	&:hover { background: darken($light, 2%); transition: background .2s ease-out; }
 }
 
 .speaker {
-	border-bottom: 2px solid darken(#f8f8f8, 5%);
+	border-bottom: 2px solid darken($light, 5%);
 	box-sizing: border-box;
 	padding: 15px 0 120px;
 	position: relative;
@@ -764,7 +341,7 @@ form.request-quote {
 
 /**
   * Footer
-  * 
+  *
   */
 
 .social-contact {
@@ -785,9 +362,8 @@ form.request-quote {
 }
 
 .site-footer {
-	background: $gunmetal;
 	border: none;
-	padding: 40px 0;
+	padding: 10px 0 40px;
 	text-align: center;
 
 	.wrapper {
@@ -797,8 +373,9 @@ form.request-quote {
 	span {
 		font-family: $title-sans;
 		font-weight: 300;
-		opacity: .5;
-		color: $airforce;
+		color: $mirage;
+		opacity: 0.5;
+		letter-spacing: 0.5px;
 		font-size: .85rem;
 	}
 
@@ -813,20 +390,19 @@ form.request-quote {
 }
 
 .site-footer ul.site-links {
+	display: inline;
 	list-style-type: none;
-	margin: 30px 0 50px;
+	margin: 30px 0;
 	padding: 0;
 	font-family: $title-sans;
 	font-weight: 300;
-	font-size: .925rem;
+	font-size: .85rem;
+	letter-spacing: 0.5px;
 
 	li {
+		a { color: $mirage; opacity: 0.75; }
 		display: inline;
-		border-right: 1px solid rgba(255,255,255,.3);
-		padding-right: 15px;
-		margin-right: 15px;
-
-		&:last-child { border: none; }
+		padding: 25px;
 	}
 }
 
@@ -834,22 +410,45 @@ form.request-quote {
   * Misc
   *
   */
+.wrapper {
+    &.squish {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
 
-.wrapper .section-half {
- 	@media handheld, screen and (min-width: 992px) {
-		@include span(9);
-	}
+    .section-half {
+        @media handheld, screen and (min-width: 992px) {
+            @include span(9);
+        }
 
-	&.clean {
-		margin: 0;
-		padding: 0;
-	}
+        &.clean {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .section-third {
+    	@media handheld, screen and (min-width: 992px) {
+            @include span(6);
+        }
+    }
+
+    .section-three-fourths {
+        @media handheld, screen and (min-width: 992px) {
+            @include span(13);
+        }
+    }
 }
 
 .bord {
 	@media handheld, screen and (min-width: 992px) {
-		border-right: 2px solid darken(#f8f8f8, 5%);
+		border-right: 2px solid darken($light, 5%);
 	}
+}
+
+.text-center {
+	text-align: center;
 }
 
 .tag {

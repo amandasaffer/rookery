@@ -4,8 +4,7 @@
 @charset "utf-8";
 
 $title-sans: "Montserrat", Helvetica, Arial, sans-serif;
-$chaparral: "chaparral-pro", sans-serif;
-$base-font-family: "chaparral-pro", sans-serif;
+$base-font-family: $title-sans;
 $base-font-size:   17px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -17,12 +16,13 @@ $airforce:         #5F91A2;
 $mirage:           #0C2029;
 $gunmetal:         #030D12;
 $pelo:             #4CA2C0;
+$light:            #F5F8F9;
 
 $spacing-unit:     30px;
 
 $text-color:       $fade;
 // $background-color: $gunmetal;
-$background-color: darken(#163D50, 13%);
+$background-color: #fff;
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
@@ -42,6 +42,19 @@ $darkred:					#8F2823;
     @media screen and (max-width: $device) {
         @content;
     }
+}
+
+@mixin vertical-padding($n) {
+  padding-top: $n;
+  padding-bottom: $n;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
 }
 
 @mixin overlay($r, $g, $b, $alpha) {
@@ -72,19 +85,20 @@ $darkred:					#8F2823;
 .icon {
   display: inline-block;
   margin: 0 auto;
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   fill: $airforce;
   color: #fff;
 }
 
 .icon-identity {
-  -webkit-transform: rotate(45deg); 
-  -moz-transform: rotate(45deg); 
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "bootstrap/bootstrap",
         "base",
         "layout",
         "syntax-highlighting",
@@ -92,3 +106,96 @@ $darkred:					#8F2823;
         "cases",
         "app"
 ;
+
+/**
+ *
+ * Bootstrap Overrides
+ *
+ */
+.container-fluid {
+  padding: 0;
+  [class^=col-] { padding: 0; }
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+/*  Bootstrap Clearfix */
+/*  Tablet  */
+@media (min-width:767px){
+
+  /* Column clear fix */
+  .col-lg-1:nth-child(12n+1),
+  .col-lg-2:nth-child(6n+1),
+  .col-lg-3:nth-child(4n+1),
+  .col-lg-4:nth-child(3n+1),
+  .col-lg-6:nth-child(2n+1),
+  .col-md-1:nth-child(12n+1),
+  .col-md-2:nth-child(6n+1),
+  .col-md-3:nth-child(4n+1),
+  .col-md-4:nth-child(3n+1),
+  .col-md-6:nth-child(2n+1){
+    clear: none;
+  }
+  .col-sm-1:nth-child(12n+1),
+  .col-sm-2:nth-child(6n+1),
+  .col-sm-3:nth-child(4n+1),
+  .col-sm-4:nth-child(3n+1),
+  .col-sm-6:nth-child(2n+1){
+    clear: left;
+  }
+}
+
+
+/*  Medium Desktop  */
+@media (min-width:992px){
+
+  /* Column clear fix */
+  .col-lg-1:nth-child(12n+1),
+  .col-lg-2:nth-child(6n+1),
+  .col-lg-3:nth-child(4n+1),
+  .col-lg-4:nth-child(3n+1),
+  .col-lg-6:nth-child(2n+1),
+  .col-sm-1:nth-child(12n+1),
+  .col-sm-2:nth-child(6n+1),
+  .col-sm-3:nth-child(4n+1),
+  .col-sm-4:nth-child(3n+1),
+  .col-sm-6:nth-child(2n+1){
+    clear: none;
+  }
+  .col-md-1:nth-child(12n+1),
+  .col-md-2:nth-child(6n+1),
+  .col-md-3:nth-child(4n+1),
+  .col-md-4:nth-child(3n+1),
+  .col-md-6:nth-child(2n+1){
+    clear: left;
+  }
+}
+
+
+/*  Large Desktop  */
+@media (min-width:1200px){
+
+  /* Column clear fix */
+  .col-md-1:nth-child(12n+1),
+  .col-md-2:nth-child(6n+1),
+  .col-md-3:nth-child(4n+1),
+  .col-md-4:nth-child(3n+1),
+  .col-md-6:nth-child(2n+1),
+  .col-sm-1:nth-child(12n+1),
+  .col-sm-2:nth-child(6n+1),
+  .col-sm-3:nth-child(4n+1),
+  .col-sm-4:nth-child(3n+1),
+  .col-sm-6:nth-child(2n+1){
+    clear: none;
+  }
+  .col-lg-1:nth-child(12n+1),
+  .col-lg-2:nth-child(6n+1),
+  .col-lg-3:nth-child(4n+1),
+  .col-lg-4:nth-child(3n+1),
+  .col-lg-6:nth-child(2n+1){
+    clear: left;
+  }
+}
