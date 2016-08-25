@@ -108,7 +108,11 @@ h1.headline {
     color: #333;
     font-size: 22px;
     line-height: 1.2;
-    padding: 0 50px 50px;
+    padding: 0 0 20px;
+
+    @include at-query($min, $small) {
+        padding: 0 50px 50px;
+    }
 }
 
 h2 {
@@ -284,9 +288,11 @@ pre {
         }
     }
 
-    &.icon-design, &.icon-art-direction {
-        position: relative;
-        left: -10px;
+    @include at-query($min, $small) {
+        &.icon-design, &.icon-art-direction {
+            position: relative;
+            left: -10px;
+        }
     }
 }
 
@@ -302,7 +308,7 @@ img.logo {
 }
 
 nav#header {
-    // background: #f8f8f8;
+    background: transparent;
     height: 90px;
     width: 100%;
 }
@@ -329,5 +335,10 @@ ul.nav {
     li a:hover {
         text-decoration: none;
         color: $airforce;
+    }
+    // responsive
+    display: none;
+    @include at-query($min, $medium) {
+        display: block;
     }
 }

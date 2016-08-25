@@ -64,7 +64,7 @@ a.case {
 		color: lighten($mirage, 10%);
 		background: #fff;
 		padding: 16px 23px 14px;
-		margin-top: 30%;
+		margin-top: 25%;
 		border-radius: 1px;
 		text-decoration: none !important;
 	}
@@ -83,6 +83,10 @@ a.case {
 			-ms-transform:scale(1.15,1.15);
 			-o-transform:scale(1.15,1.15);
 		}
+	}
+
+	@include at-query($min, $medium) {
+		span.case-title { margin-top: 30%; }
 	}
 }
 
