@@ -128,6 +128,31 @@
 /**
  * Posts
  */
+.blog-post {
+    padding: 3rem 0;
+    border-bottom: 2px solid $light;
+
+    h2 a {
+        color: $mirage;
+    }
+
+    a.full-post-link {
+        @extend p;
+        color: $pelo;
+        font-weight: 500;
+    }
+
+    p.date {
+        // text-transform: uppercase;
+        opacity: 0.4;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+.post-main {
+    margin-top: 4rem;
+}
 .post-header {
     margin-bottom: $spacing-unit;
 }

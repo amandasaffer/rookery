@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.headline {
-    color: #333;
+    color: #fff;
     font-size: 22px;
     line-height: 1.2;
     padding: 0 0 20px;
@@ -157,9 +157,9 @@ h3.section {
  * Links
  */
 a {
-    color: $airforce;
-    &:visited { color: $airforce; }
-    &:hover { color: $airforce; }
+    color: $pelo;
+    &:visited { color: $pelo; }
+    &:hover { color: $pelo; }
 }
 
 a.button, button {
@@ -237,24 +237,29 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
+    font-size: 13px;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: #f4f4f4;
+    // color: $pelo;
 }
 
 code {
-    padding: 1px 5px;
+    padding: 2px 4px;
 }
 
 pre {
     padding: 8px 12px;
     overflow-x: auto;
+    color: $gunmetal;
 
     > code {
         border: 0;
         padding-right: 0;
         padding-left: 0;
+    }
+
+    span.c1 {
+        color: #bbb !important;
     }
 }
 
@@ -328,7 +333,7 @@ ul.nav {
         font-weight: 300;
         font-size: 0.85rem;
         letter-spacing: 0.5px;
-        color: $mirage;
+        color: #fff;
         margin: 40px;
         &:last-child { margin-right: 0; }
     }

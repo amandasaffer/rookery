@@ -16,7 +16,7 @@
 		width: 23px;
 		height: 2px;
 		display: block;
-		background: $mirage;
+		background: #fff;
 		border-radius: 2rem;
 		transition: all 500ms ease-in-out;
 		&:first-child { margin-top: 22px; }
@@ -75,9 +75,9 @@
     background: url('/img/bg2.jpg');
     background-size: cover;
     background-position: 0% 50%;
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.85);
+    box-shadow: inset 0 0 0 1000px rgba(12,32,41,.7);
     background-repeat: no-repeat;
-    padding: 4rem 0 1rem;
+    padding: 3rem 0 1rem;
 	margin: 0 auto 1rem;
 
     @include at-query($min, $small) {
@@ -86,11 +86,20 @@
     }
 
     @include at-query($min, $medium) {
-        padding: 8rem 0 3rem;
+        padding: 5rem 0 4rem;
+        &.-about { padding: 7rem 0 5rem; }
     }
 
     @include at-query($min, $large) {
-        padding: 10rem 0 4rem;
+        padding: 5rem 0 2.5rem;
+        &.-about { padding: 8rem 0 6rem; }
+    }
+
+    &.-blog {
+        background: url('/img/bg4.jpg');
+        background-position: 0% 50%;
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px rgba(12,32,41,.6);
     }
 }
 
@@ -99,11 +108,11 @@
   * Only for home page
   */
 #landing {
-	background-image: url('/img/mountain.jpg');
+	background-image: url('/img/bg3.jpg');
 	background-size: cover;
 	background-position: 0% 100%;
 	background-repeat: no-repeat;
-	box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.8);
+	box-shadow: inset 0 0 0 1000px rgba(12,32,41,0.8);
 	height: 400px;
     margin-bottom: 3rem;
 	color: #fff;
@@ -111,27 +120,41 @@
 
     @include at-query($min, $small) {
         text-align: left;
-        box-shadow: inset 0 0 0 1000px rgba(255,255,255,.45);
-        background-position: 50% 100%;
+        box-shadow: inset 0 0 0 1000px rgba(12,32,41,0.75);
+        background-position: 0% 63%;
     }
 
 	@include at-query($min, $medium) {
 		height: 65vh;
         background-attachment: fixed; // desktop only
-		margin-bottom: 6rem;
+		margin-bottom: 5rem;
 	}
 
 	@include at-query($min, $large) {
-		height: 72vh;
+		height: 70vh;
 	}
+
+    h1.headline {
+        color: #fff;
+    }
+
+    a.button {
+        color: #fff;
+        border-color: #fff;
+    }
 }
 
 #landing > .intro > .row {
 	padding-top: 3rem;
 
+    a.button {
+        opacity: 1;
+        @include transition(opacity, 0.2s, ease-in-out);
+    }
+
 	a.button:hover {
 		text-decoration: none;
-		opacity: .5;
+		opacity: 0.75;
 	}
 
 	@include at-query($min, $medium) {
@@ -139,7 +162,7 @@
 	}
 
 	@include at-query($min, $large) {
-		padding-top: 16vh;
+		padding-top: 17vh;
 	}
 }
 
