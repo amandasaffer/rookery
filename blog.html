@@ -17,7 +17,7 @@ title-tag: "blog"
 
                     <div class="article-content">
                         <p>{{ post.post-description }}</p>
-                        <a href="http://localhost:4000/{{ post.url }}" class="full-post-link js-pjax">Read More</a>
+                        <a href="{{ post.url }}" class="full-post-link js-pjax">Read More</a>
                     </div>
                 </article>
             {% endfor %}

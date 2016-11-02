@@ -316,6 +316,11 @@ nav#header {
     background: transparent;
     height: 90px;
     width: 100%;
+
+    &.dark ul.nav {
+       li a { color: #0D2330; }
+       li a:hover { color: $airforce; }
+    }
 }
 
 #landing > nav#header { background: none; }
@@ -339,7 +344,7 @@ ul.nav {
     }
     li a:hover {
         text-decoration: none;
-        color: $airforce;
+        color: darken(#fff, 10%);
     }
     // responsive
     display: none;
