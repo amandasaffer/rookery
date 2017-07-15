@@ -155,11 +155,22 @@ body {
   color: #2F3F48;
   font-weight: 400; }
 
-.wf-loading {
-  visibility: hidden !important; }
+.wf-loading h1,
+.wf-loading p,
+.wf-loading span,
+.wf-loading div.tag {
+  opacity: 0;
+  visibility: hidden; }
 
-.wf-active {
-  visibility: visible !important; }
+.wf-active h1,
+.wf-active p,
+.wf-active span,
+.wf-active div.tag {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.64s ease-in-out;
+  -moz-transition: opacity 0.64s ease-in-out;
+  transition: opacity 0.64s ease-in-out; }
 
 /* TOOLTIP OVERRIDE */
 [tooltip]::after {
@@ -396,6 +407,7 @@ section.portfolio {
     left: 15px;
     background: #fff;
     color: #2F3F48;
+    min-height: 15px;
     font-size: 0.8rem;
     font-family: "adelle-sans", sans-serif;
     font-weight: 700;
