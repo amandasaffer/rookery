@@ -155,15 +155,6 @@ body {
   color: #2F3F48;
   font-weight: 400; }
 
-.wf-loading h1,
-.wf-loading h2,
-.wf-loading p {
-  visibility: hidden !important; }
-
-.wf-active h1,
-.wf-loading p {
-  visibility: visible !important; }
-
 /* TOOLTIP OVERRIDE */
 [tooltip]::after {
   font-family: "adelle-sans", sans-serif;
