@@ -155,10 +155,10 @@ body {
   color: #2F3F48;
   font-weight: 400; }
 
-.wf-loading h1,
-.wf-loading p,
-.wf-loading span,
-.wf-loading div.tag {
+html h1,
+html p,
+html span,
+html div.tag {
   opacity: 0;
   visibility: hidden; }
 
@@ -407,7 +407,7 @@ section.portfolio {
     left: 15px;
     background: #fff;
     color: #2F3F48;
-    min-height: 15px;
+    min-height: 20px;
     font-size: 0.8rem;
     font-family: "adelle-sans", sans-serif;
     font-weight: 700;
