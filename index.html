@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Rookery - Web Design &amp; Development from Denver, CO</title>
+  <meta name="description" content="The Rookery specializes in web design, web development, and logo design. We help small businesses and entrepreneurs bring their ideas to life." />
+  <meta name="keywords" content="web design, web development, denver, freelancer, for hire" />
+
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+  <link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+  <script src='assets/js/jquery-1.8.3.min.js'></script>
+<script src='assets/js/app.js'></script>
+
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+
+</head>
+
+<body>
+
+<div id="main">
+    <section class="content">
+        <div class="logo-holder" tooltip="We love birbs!" flow="right">
+        <svg id="logo" width="76px" height="53px" viewBox="0 0 76 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path id="birb" transform="translate(-66.000000, -55.000000)" fill="#009CDD" d="M125.14359,60.9730657 C126.215385,60.9730657 127.092308,61.8529876 127.092308,62.9284476 C127.092308,64.0039076 126.215385,64.8838295 125.14359,64.8838295 C124.071795,64.8838295 123.194872,64.0039076 123.194872,62.9284476 C123.194872,61.8529876 124.071795,60.9730657 125.14359,60.9730657 Z M140.635897,65.9592895 C140.538462,65.7637513 137.517949,60.9730657 132.158974,58.3333002 C130.307692,56.1823801 128.261538,55.1069201 125.923077,55.009151 C121.830769,54.8136128 117.153846,57.7466856 110.625641,64.2972149 C92.3076923,76.6161208 85.974359,82.5800355 83.9282051,85.7086465 C83.6358974,86.0997229 83.4410256,86.3930302 83.3435897,86.7841066 C82.9538462,87.7617975 82.9538462,88.3484121 83.0512821,88.7394885 C83.0512821,89.0327957 83.1487179,89.326103 83.2461538,89.6194103 C79.6410256,92.3569449 72.5282051,97.636476 66.7794872,102.720469 L66,103.404853 L66.3897436,104.382544 C66.974359,105.84908 68.0461538,106.826771 69.6051282,107.315616 C70.1897436,107.511155 70.8717949,107.608924 71.6512821,107.608924 C77.6923077,107.608924 87.5333333,102.036085 93.9641026,97.9297833 C95.7179487,98.4186288 97.6666667,98.614167 99.6153846,98.614167 C100.687179,98.614167 101.758974,98.5163979 102.830769,98.4186288 L100.979487,101.449471 L105.948718,104.969158 L99.4205128,104.969158 L99.4205128,108 L110.723077,108 L115.497436,108 L117.153846,108 L117.153846,104.969158 L111.210256,104.969158 L104.974359,100.569549 L106.923077,97.4409378 C109.45641,96.6587851 112.574359,95.2900178 115.692308,93.432405 C114.815385,94.507865 113.74359,95.583325 112.769231,96.7565542 L115.010256,98.8097052 C129.723077,82.9711119 132.061538,72.8031261 132.353846,69.0879005 L142,68.1102096 L140.635897,65.9592895 Z M70.4820513,104.382544 C70.1897436,104.284774 69.9948718,104.187005 69.8,104.089236 C75.0615385,99.4940888 81.2,94.8011723 84.6102564,92.3569449 C85.8769231,93.9212504 87.825641,95.3877869 90.2615385,96.561016 C82.7589744,101.253933 73.9897436,105.458004 70.4820513,104.382544 Z M130.697436,66.1548277 L129.235897,66.3503659 L129.333333,67.8169023 C129.333333,67.8169023 129.430769,69.4789769 128.553846,72.5098188 C127.579487,71.629897 125.533333,70.9455133 118.712821,72.3142806 L119.297436,75.2473535 C124.266667,74.2696625 125.923077,74.5629698 126.410256,74.6607389 C125.14359,85.9041847 112.184615,92.6502522 105.461538,94.6056341 C102.635897,95.485556 100.005128,95.583325 97.5692308,95.3877869 C98.7384615,94.6056341 99.6153846,93.9212504 100.005128,93.7257123 L98.2512821,91.2814849 C96.7897436,92.2591758 95.2307692,93.432405 93.4769231,94.507865 C89.8717949,93.3346359 87.2410256,91.1837158 86.3641026,89.5216412 C86.0717949,88.8372576 85.974359,88.4461812 86.0717949,88.0551048 C86.0717949,87.9573357 86.1692308,87.6640284 86.3641026,87.3707211 C86.4615385,87.272952 86.4615385,87.272952 86.5589744,87.175183 C92.6,83.7532647 104.194872,79.2558863 113.74359,76.6161208 L112.964103,73.683048 C106.533333,75.4428917 99.1282051,78.0826572 93.0871795,80.7224227 C96.9846154,77.4960426 103.123077,72.9986643 112.574359,66.6436732 L112.671795,66.5459041 L112.769231,66.5459041 C118.517949,60.6797584 122.805128,57.8444547 125.923077,58.0399929 C127.482051,58.137762 128.846154,58.9199148 130.210256,60.5819894 L130.405128,60.8752966 L130.697436,60.9730657 C133.328205,62.244064 135.374359,64.1994458 136.641026,65.6659822 L130.697436,66.1548277 Z"></path>
+        </svg>
+        </div>
+        <h1>We craft beautiful web experiences that get results for our clients.</h1>
+
+        <p>The Rookery works with small businesses &amp; entrepreneurs to bring their visions to life on the web. We specialize in branding &amp; identity as well as custom web design &amp; development. We have experience with tools like Shopify, Wordpress, Angular 2, and Laravel.</p>
+
+        <p>Some of our clients include internet entrepreneur <a href="https://youtube.com/vlogbrothers" target="_blank" rel="noopener">Hank Green</a>, booming lady-led startup <a href="https://thegroomsmansuit.com" target="_blank" rel="noopener">The Groomsman Suit</a>, and Javascript educator / conference organizer <a href="http://joshowens.me/about/" target="_blank" rel="noopener">Josh Owens</a>. Interested in working together? Request a quote using the form below.</p>
+
+        <form action="https://formspree.io/amandasaffer@gmail.com" method="POST" id="contact">
+            <h2>Request A Quote</h2>
+            <p class="subhead">Fill out this form and we'll get in touch.</p>
+
+            <div class="form-group">
+                <p>
+                    <label for="nameInput">Your Name</label>
+                    <input type="text" id="nameInput" name="name" placeholder="" required>
+                </p>
+
+                <p>
+                    <label for="emailInput">Email Address</label>
+                    <input type="email" id="emailInput" name="_replyto" placeholder="aryastark@gmail.com" required>
+                </p>
+            </div>
+
+            <div class="form-group">
+                <p>
+                    <label for="budgetInput">Budget <span>(optional)</span></label>
+                    <input type="text" id="budgetInput" name="budget" placeholder="$6,000 USD">
+                </p>
+
+                <p>
+                    <label for="orgInput">Company/Organization <span>(optional)</span></label>
+                    <input type="email" id="orgInput" name="organization" placeholder="">
+                </p>
+            </div>
+
+            <div class="form-group full">
+                <p>
+                    <label for="describeInput">Describe your project?</label>
+                    <textarea id="describeInput" rows="8" name="project" placeholder="Please provide as much detail as possible! The more you describe at this first stage, the faster we can hash out the details." required></textarea>
+                </p>
+            </div>
+
+            <input type="hidden" name="_subject" value="Quote Request from The Rookery" />
+            <input type="hidden" name="_next" value="//rookery.design/thanks" />
+            <input type="text" name="_gotcha" style="display:none" />
+
+            <button type="submit" class="btn">Get A Quote</button>
+        </form>
+
+        <div class="social">
+            <ul>
+                <li><a href="http://twitter.com/ajsaffer" target="_blank" rel="noopener"><span>twitter <span class="at">@</span></span> ajsaffer</a></li>
+                <li><a href="http://dribbble.com/amandasaffer" target="_blank" rel="noopener"><span>dribbble <span class="at">@</span></span> amandasaffer</a></li>
+                <li><a href="http://instagram.com/alertamanda" target="_blank" rel="noopener"><span>insta <span class="at">@</span></span> alertamanda</a></li>
+            </ul>
+        </div>
+        <div class="copyright -web">
+            <p>&copy; 2017 Amanda Saffer. All rights reserved.</p>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div class="portfolio-grid">
+            <!-- PODCON  -->
+<a href="http://podcon.com" class="entry" style="background: url('assets/img/podcon.png') 20% 30% / 180% no-repeat;" target="_blank" rel="noopener">
+    <div class="tag">PodCon <span>Branding &amp; Art Direction</span></div>
+</a>
+
+<!-- GROOMSMAN SUIT -->
+<a href="https://thegroomsmansuit.com" class="entry" style="background: url('assets/img/grooms.jpg') top center / 150% no-repeat;" target="_blank" rel="noopener">
+    <div class="tag">The Groomsman Suit <span>Design &amp; Code</span></div>
+</a>
+
+
+<!-- COMPLEXLY -->
+<a href="http://complexly.com" class="entry" style="background: url('assets/img/complexly-cards.png') center / cover no-repeat;" target="_blank" rel="noopener">
+    <div class="tag">Complexly <span>Branding, Design, &amp; Code</span></div>
+</a>
+
+<!-- WIZ SCHOOL -->
+<a href="https://store.dftba.com/products/wizard-school" class="entry" style="background: url('assets/img/wiz-school.png') top left / cover no-repeat;" target="_blank" rel="noopener">
+    <div class="tag">Wizard School <span>Graphic Design</span></div>
+</a>
+
+<!-- SKIN CARE SPECIALISTS -->
+<a href="#" class="entry" style="background: url('assets/img/scs-site.png') 20% 0% / 130% no-repeat;" target="_blank" rel="noopener">
+    <div class="tag">Skin Care Specialists <span>Design &amp; Code</span></div>
+</a>
+
+<!-- SRG FASHION -->
+<a href="https://srgfashion.com" class="entry" style="background: url('assets/img/suits.png') 37% 0% / 130% no-repeat;" target="_blank" rel="noopener">
+    <div class="tag">SRG Fashion <span>Design &amp; Code</span></div>
+</a>
+
+<!-- METEOR CLUB -->
+<a href="#" class="entry" style="background: url('assets/img/meteor.png') 65% 43% / cover no-repeat;" target="_blank" rel="noopener">
+    <div class="tag">Meteor Club <span>Branding, Design &amp; Code</span></div>
+</a>
+        </div>
+
+        <div class="copyright -mobile">
+            <p>&copy; 2017 Amanda Saffer. All rights reserved.</p>
+        </div>
+    </section>
+</div>
+
+
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'oan7ute',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
+</body>
+</html>
