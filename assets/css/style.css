@@ -156,6 +156,7 @@ body {
   font-weight: 400; }
 
 html h1,
+html h2,
 html p,
 html span,
 html div.tag {
@@ -163,6 +164,7 @@ html div.tag {
   visibility: hidden; }
 
 .wf-active h1,
+.wf-active h2,
 .wf-active p,
 .wf-active span,
 .wf-active div.tag {
